@@ -44,18 +44,20 @@ public class EmployeeController {
 		return "viewemp";
 	}
 	
-	@RequestMapping(value = "/editemp/{id}")
+	@RequestMapping(value = "/edit/{id}")
 	public String edit(@PathVariable int id,Model m) {
 		Employee emp = dao.getEmployeeById(id);
 		m.addAttribute("command",emp);
-		return "empeditform";
+		return "edit";
 	}
+	
+	
 	@RequestMapping(value = "/editsave",method = RequestMethod.POST)
 	public String editsave(@ModelAttribute("emp") Employee emp) {
 		dao.update(emp);
 		return "redirect:/viewemp";
 	}
-	@RequestMapping(value = "/deleteemp/{id}",method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteemp/{id}",method = RequestMethod.POST)
 	public String delete(@PathVariable int id) {
 		dao.delete(id);
 		return "redirect:/viewemp";

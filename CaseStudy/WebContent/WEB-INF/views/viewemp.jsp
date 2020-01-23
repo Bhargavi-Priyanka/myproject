@@ -17,8 +17,8 @@
 			<td>${emp.name}</td>
 			<td>${emp.email}</td>
 			<td>${emp.country}</td>
-			<td><a href="editemp/${emp.id}">Edit</a></td>
-			<td><a href="deleteemp/${emp.id}">Delete</a></td>
+		   <td><a href="edit/${emp.id}">Edit</a></td>  
+           <td><a href="deleteemp/${emp.id}">Delete</a></td> 
 		</tr>
 	</c:forEach>
 </table>
